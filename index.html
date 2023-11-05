@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="video-wrapper js-video-wrapper hidden">
+        <video loop class="video-preview js-video-preview"></video>
+        <button class="play-button js-play-button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <line
+              x1="16"
+              y1="6.5"
+              x2="16"
+              y2="17.5"
+              fill="none"
+              stroke="#000"
+            />
+            <line
+              x1="22"
+              y1="6.5"
+              x2="22"
+              y2="17.5"
+              fill="none"
+              stroke="#000"
+            />
+            <polygon points="2 17 10 12 2 7 2 17" fill="none" stroke="#000" />
+          </svg>
+        </button>
+        <div class="counter js-counter">0:00</div>
+        <div class="close-button js-close-button"></div>
+        <input type="range" class="slider js-slider" value="0" step="0.01" />
+        <button
+          type="button"
+          class="select-thumb-button js-select-thumb-button"
+        >
+          Select This Thumbnail
+        </button>
+      </div>
+      <input
+        type="file"
+        accept="video/mp4,video/x-m4v,video/*"
+        class="js-video-input"
+      />
+    </div>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

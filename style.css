@@ -1,0 +1,130 @@
+:root {
+  --button-width: 48px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+.video-wrapper {
+  position: relative;
+}
+
+.video-wrapper:hover .play-button {
+  opacity: 1;
+}
+
+.video-preview {
+  position: relative;
+  width: 650px;
+  height: 400px;
+  object-fit: contain;
+  background: #000;
+  border-radius: 16px;
+}
+
+.counter {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  color: #fff;
+  font-weight: 300;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Play button */
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  padding: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 300ms;
+}
+
+.play-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  transition: all 300ms;
+  z-index: -1;
+}
+
+.play-button:hover::before {
+  transform: scale(1.1);
+  background: #fff;
+}
+
+/* Close button */
+
+.close-button {
+  position: absolute;
+  top: calc(var(--button-width) / -4);
+  right: calc(var(--button-width) / -4);
+  width: var(--button-width);
+  height: var(--button-width);
+  background: #ddd;
+  border-radius: calc(var(--button-width) / 2);
+  cursor: pointer;
+}
+
+.close-button::after {
+  content: "x";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 32px;
+  line-height: 0;
+}
+
+/* Slider */
+
+.slider {
+  display: block;
+  margin: 32px auto;
+}
+
+/* Select thumb button */
+
+.select-thumb-button {
+  display: block;
+  margin: 0 auto;
+  padding: 12px 24px;
+  background: rgb(8, 144, 229);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
